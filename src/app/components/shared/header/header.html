@@ -1,0 +1,49 @@
+<!-- Top Header -->
+<div class="bg-white border-b border-gray-200 h-14 flex items-center justify-between px-6">
+  <div></div>
+  <!-- Search Bar -->
+  <div class="flex-1 max-w-md">
+    <div class="flex border items-center px-4 text-gray-400 border-gray-300 focus:border-transparent">
+      <input type="text" placeholder="Hae avaimanoja..." class="w-full h-9 text-sm rounded-md focus:outline-none ">
+      <mat-icon class=" text-sm">search</mat-icon>
+    </div>
+  </div>
+
+  <!-- Right Side -->
+  <div class="flex items-center space-x-4">
+    <button class="relative">
+      <mat-icon class="text-gray-600">notifications</mat-icon>
+    </button>
+
+    <!-- User Profile -->
+    <div class="flex items-center space-x-1 cursor-pointer border border-gray-300 rounded-full"
+      (menuOpened)="isMenuOpen = true" (menuClosed)="isMenuOpen = false" [matMenuTriggerFor]="userMenu">
+      <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+        <span class="text-white text-sm font-medium">KT</span>
+      </div>
+      <mat-icon class="text-gray-400 text-sm">{{ isMenuOpen ? "keyboard_arrow_up" : "keyboard_arrow_down" }}</mat-icon>
+    </div>
+  </div>
+</div>
+<!-- User Menu -->
+<mat-menu  #userMenu="matMenu">
+ <div class="bg-white rounded-md">
+   <div class="px-4 py-3 border-b border-gray-200">
+    <div class="text-sm font-medium text-gray-900">Kerola Tuomas Veikko</div>
+    <div class="text-xs text-gray-500">Erikoissairaanhoito</div>
+    <div class="text-xs text-gray-500">Palvelija: esh. P0007</div>
+  </div>
+  <button mat-menu-item>
+    <mat-icon class="mr-3">settings</mat-icon>
+    <span>Asetukset</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon class="mr-3">admin_panel_settings</mat-icon>
+    <span>Avaa ylläpitäjän paneeli</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon class="mr-3">logout</mat-icon>
+    <span>Kirjaudu ulos</span>
+  </button>
+ </div>
+</mat-menu>

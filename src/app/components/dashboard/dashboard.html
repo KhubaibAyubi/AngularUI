@@ -1,0 +1,448 @@
+<!-- Top Header -->
+
+ <app-header></app-header>
+
+
+
+
+<!-- Main Content -->
+<div class="bg-gray-100 min-h-screen w-full p-4">
+<app-navigation></app-navigation>
+
+  <!-- Main Content Area -->
+  <div class=" lg:w-4/5 w-full mx-auto py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- Left Column - Appointments -->
+      <div class="lg:col-span-2 space-y-6 bg-white p-4 rounded-md">
+
+        <!-- Tabs -->
+        <div class="flex items-center space-x-6 border-b border-gray-200">
+          <div class="flex items-center space-x-2 pb-3 ">
+            <span class="text-sm font-medium text-gray-900">Työlista</span>
+          </div>
+          <div class="flex items-center space-x-2 cursor-pointer bg-blue-200 mb-3 p-1 rounded-md">
+            <mat-icon class="text-blue-600 text-xs">calendar_today</mat-icon>
+            <span class="text-xs text-blue-600">Kalenteri</span>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer hover:text-blue-600">
+            <mat-icon class="text-sm">chevron_left</mat-icon>
+            <span>Edellinen lista</span>
+          </div>
+          <div class="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer hover:text-blue-600">
+            <span>Huomisen lista</span>
+            <mat-icon class="text-sm">chevron_right</mat-icon>
+          </div>
+        </div>
+
+        <!-- Appointments List -->
+        <div class="space-y-4">
+
+          <!-- Appointment 1 -->
+          <div class="hover:shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="rounded-sm flex items-center justify-center border border-blue-500 flex-shrink-0 mt-1">
+                <mat-icon class="text-blue-600 ">add</mat-icon>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-2 text-sm xl:w-1/2 mb-2 ">
+                    <span class="font-medium text-gray-900">09:00 AM</span>
+                    <span class="text-gray-400">–</span>
+                    <span class="font-medium text-gray-900">Juha Lahtinen – 240545-123Y</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Etävastanotto</span>
+                  </div>
+                  <div class="xl:flex gap-2 hidden">
+                       <button class="px-1 py-1 bg-blue-950 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa etävastanotto
+                    </button>
+                       <button class="px-1 py-1 bg-blue-700 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa potilaat
+                    </button>
+                       <button class="px-1 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-200">
+                      Viestiit
+                    </button>
+                    <button class="transition-all" (click)="appointmentsTextMenus.isAppointmentTextMenu1Open = !appointmentsTextMenus.isAppointmentTextMenu1Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu1Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+
+                </div>
+              
+
+                <div class="xl:hidden  gap-2 flex">
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa etävastanotto
+                  </button>
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa potilaat
+                  </button>
+                      <button class="px-1 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200">
+                    Viestiit
+                  </button>
+                     <button class="transition-all" (click)="appointmentsTextMenus.isAppointmentTextMenu1Open = !appointmentsTextMenus.isAppointmentTextMenu1Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu1Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                </div>
+                  @if(appointmentsTextMenus.isAppointmentTextMenu1Open){
+                <p class="text-sm text-gray-600 my-3">
+                  Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin
+                  kokea viime viikolla.
+                </p>
+                }
+              </div>
+            </div>
+          </div>
+
+             <!-- Appointment 2 -->
+          <div class="hover:shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="rounded-sm flex items-center justify-center border border-blue-500 flex-shrink-0 mt-1">
+                <mat-icon class="text-blue-600 ">add</mat-icon>
+              </div>
+                 <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-2 text-sm xl:w-1/2 mb-2 ">
+                    <span class="font-medium text-gray-900">09:00 AM</span>
+                    <span class="text-gray-400">–</span>
+                    <span class="font-medium text-gray-900">Juha Lahtinen – 240545-123Y</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Etävastanotto</span>
+                  </div>
+                  <div class="xl:flex gap-2 hidden">
+                       <button class="px-1 py-1 bg-blue-950 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa etävastanotto
+                    </button>
+                       <button class="px-1 py-1 bg-blue-700 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa potilaat
+                    </button>
+                       <button class="px-1 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-200">
+                      Viestiit
+                    </button>
+                    <button (click)="appointmentsTextMenus.isAppointmentTextMenu2Open = !appointmentsTextMenus.isAppointmentTextMenu2Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu2Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+
+                </div>
+              
+
+                <div class="xl:hidden  gap-2 flex">
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa etävastanotto
+                  </button>
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa potilaat
+                  </button>
+                      <button class="px-1 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200">
+                    Viestiit
+                  </button>
+                        <button (click)="appointmentsTextMenus.isAppointmentTextMenu2Open = !appointmentsTextMenus.isAppointmentTextMenu2Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu2Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                </div>
+                  @if(appointmentsTextMenus.isAppointmentTextMenu2Open){
+                <p class="text-sm text-gray-600 my-3">
+                  Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin
+                  kokea viime viikolla.
+                </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointment 3 -->
+          <div class="hover:shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="rounded-sm flex items-center justify-center border border-blue-500 flex-shrink-0 mt-1">
+                <mat-icon class="text-blue-600 ">add</mat-icon>
+              </div>
+                <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-2 text-sm xl:w-1/2 mb-2 ">
+                    <span class="font-medium text-gray-900">09:00 AM</span>
+                    <span class="text-gray-400">–</span>
+                    <span class="font-medium text-gray-900">Juha Lahtinen – 240545-123Y</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Etävastanotto</span>
+                  </div>
+                  <div class="xl:flex gap-2 hidden">
+                       <button class="px-1 py-1 bg-blue-950 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa etävastanotto
+                    </button>
+                       <button class="px-1 py-1 bg-blue-700 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa potilaat
+                    </button>
+                       <button class="px-1 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-200">
+                      Viestiit
+                    </button>
+                    <button (click)="appointmentsTextMenus.isAppointmentTextMenu3Open = !appointmentsTextMenus.isAppointmentTextMenu3Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu3Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+
+                </div>
+
+                <div class="xl:hidden  gap-2 flex">
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa etävastanotto
+                  </button>
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa potilaat
+                  </button>
+                      <button class="px-1 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200">
+                    Viestiit
+                  </button>
+                      <button (click)="appointmentsTextMenus.isAppointmentTextMenu3Open = !appointmentsTextMenus.isAppointmentTextMenu3Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu3Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                </div>
+                 @if(appointmentsTextMenus.isAppointmentTextMenu3Open){
+                <p class="text-sm text-gray-600 my-3">
+                  Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin
+                  kokea viime viikolla.
+                </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointment 4 -->
+          <div class="hover:shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="rounded-sm flex items-center justify-center border border-blue-500 flex-shrink-0 mt-1">
+                <mat-icon class="text-blue-600 ">add</mat-icon>
+              </div>
+                  <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-2 text-sm xl:w-1/2 mb-2 ">
+                    <span class="font-medium text-gray-900">09:00 AM</span>
+                    <span class="text-gray-400">–</span>
+                    <span class="font-medium text-gray-900">Juha Lahtinen – 240545-123Y</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Etävastanotto</span>
+                  </div>
+                  <div class="xl:flex gap-2 hidden">
+                       <button class="px-1 py-1 bg-blue-950 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa etävastanotto
+                    </button>
+                       <button class="px-1 py-1 bg-blue-700 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa potilaat
+                    </button>
+                       <button class="px-1 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-200">
+                      Viestiit
+                    </button>
+                    <button (click)="appointmentsTextMenus.isAppointmentTextMenu4Open = !appointmentsTextMenus.isAppointmentTextMenu4Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu4Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+
+                </div>
+             
+                <div class="xl:hidden  gap-2 flex">
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa etävastanotto
+                  </button>
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa potilaat
+                  </button>
+                      <button class="px-1 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200">
+                    Viestiit
+                  </button>
+                       <button (click)="appointmentsTextMenus.isAppointmentTextMenu4Open = !appointmentsTextMenus.isAppointmentTextMenu4Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu4Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                </div>
+                   @if(appointmentsTextMenus.isAppointmentTextMenu4Open){
+                <p class="text-sm text-gray-600 my-3">
+                  Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin
+                  kokea viime viikolla.
+                </p>
+                }
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointment 5 -->
+          <div class="hover:shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="rounded-sm flex items-center justify-center border border-blue-500 flex-shrink-0 mt-1">
+                <mat-icon class="text-blue-600 ">add</mat-icon>
+              </div>
+                  <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-2 text-sm xl:w-1/2 mb-2 ">
+                    <span class="font-medium text-gray-900">09:00 AM</span>
+                    <span class="text-gray-400">–</span>
+                    <span class="font-medium text-gray-900">Juha Lahtinen – 240545-123Y</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Etävastanotto</span>
+                  </div>
+                  <div class="xl:flex gap-2 hidden">
+                       <button class="px-1 py-1 bg-blue-950 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa etävastanotto
+                    </button>
+                       <button class="px-1 py-1 bg-blue-700 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa potilaat
+                    </button>
+                       <button class="px-1 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-200">
+                      Viestiit
+                    </button>
+                    <button (click)="appointmentsTextMenus.isAppointmentTextMenu5Open = !appointmentsTextMenus.isAppointmentTextMenu5Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu5Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+
+                </div>
+              
+
+                <div class="xl:hidden  gap-2 flex">
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa etävastanotto
+                  </button>
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa potilaat
+                  </button>
+                      <button class="px-1 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200">
+                    Viestiit
+                  </button>
+                   <button (click)="appointmentsTextMenus.isAppointmentTextMenu5Open = !appointmentsTextMenus.isAppointmentTextMenu5Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu5Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                </div>
+                  @if(appointmentsTextMenus.isAppointmentTextMenu5Open){
+                <p class="text-sm text-gray-600 my-3">
+                  Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin
+                  kokea viime viikolla.
+                </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Appointment 6 -->
+          <div class="hover:shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="rounded-sm flex items-center justify-center border border-blue-500 flex-shrink-0 mt-1">
+                <mat-icon class="text-blue-600 ">add</mat-icon>
+              </div>
+      <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-2 text-sm xl:w-1/2 mb-2 ">
+                    <span class="font-medium text-gray-900">09:00 AM</span>
+                    <span class="text-gray-400">–</span>
+                    <span class="font-medium text-gray-900">Juha Lahtinen – 240545-123Y</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Etävastanotto</span>
+                  </div>
+                  <div class="xl:flex gap-2 hidden">
+                       <button class="px-1 py-1 bg-blue-950 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa etävastanotto
+                    </button>
+                       <button class="px-1 py-1 bg-blue-700 text-white text-xs rounded hover:bg-blue-700">
+                      Avaa potilaat
+                    </button>
+                       <button class="px-1 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-200">
+                      Viestiit
+                    </button>
+                    <button (click)="appointmentsTextMenus.isAppointmentTextMenu6Open = !appointmentsTextMenus.isAppointmentTextMenu6Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu6Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+
+                </div>
+         
+
+                <div class="xl:hidden  gap-2 flex">
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa etävastanotto
+                  </button>
+                      <button class="px-1 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
+                    Avaa potilaat
+                  </button>
+                      <button class="px-1 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200">
+                    Viestiit
+                  </button>
+                    <button (click)="appointmentsTextMenus.isAppointmentTextMenu6Open = !appointmentsTextMenus.isAppointmentTextMenu6Open">
+                      <mat-icon>
+                        {{ appointmentsTextMenus.isAppointmentTextMenu6Open ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                      </mat-icon>
+                    </button>
+                </div>
+                       @if(appointmentsTextMenus.isAppointmentTextMenu6Open){
+                <p class="text-sm text-gray-600 my-3">
+                  Hei tohtori, kiitos, että hyväksyitte tapaamisen. Tarvitsen apua uusien oireideni kanssa, joita aloin
+                  kokea viime viikolla.
+                </p>
+                }
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Notes Section -->
+        <div class="bg-white rounded-lg border border-gray-200 p-4">
+         <div class="flex justify-between">
+           <h3 class="font-medium text-gray-900 mb-4">Muistiinpanot</h3>
+           <div class="flex gap-3">
+               <button class="bg-gray-300 flex justify-center items-center rounded-md w-8 h-8">
+                <mat-icon>download</mat-icon>
+              </button>
+               <button class="bg-gray-300 flex justify-center items-center rounded-md w-8 h-8">
+                <mat-icon>delete</mat-icon>
+              </button>
+           </div>
+         </div>
+          <div class="flex items-center space-x-4">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-200">
+              <mat-icon class="text-gray-600">add</mat-icon>
+            </div>
+            <div class="text-sm text-gray-600">
+              <div>Lääkärin</div>
+              <div>muistiinpanot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="space-y-6">
+
+    <app-actions></app-actions>
+       <br>
+<app-patients></app-patients>
+     
+      </div>
+    </div>
+  </div>
+</div>
